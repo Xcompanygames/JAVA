@@ -4,12 +4,14 @@ import java.awt.Graphics;
 
 public abstract class GameObject {
 
+	/////A game object will be every single object that we will use in this game
 	
 	protected int x,y;
 	protected ID id;
 	protected int velX, velY;
 	
 	public GameObject (int x, int y, ID id) {
+		//This constractor will be used every time we create a new object
 		this.x =x;
 		this.y=y;
 		this.id=id;

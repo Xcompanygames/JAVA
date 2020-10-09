@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;MatalaMivne&apos; to &apos;MivneMatala&apos;&#x0D;&#x0A;- Original project: &apos;MivneKML&apos;&#x0D;&#x0A;- Original element: &apos;MivneKML/src/MatalaMivne&apos;&#x0D;&#x0A;- Renamed element: &apos;MivneKML/src/MivneMatala&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;MatalaMivne&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;MatalaMivne" name="MivneMatala" qualified="false" references="true" stamp="1514830414805" textual="false" version="1.0"/>
+</session>

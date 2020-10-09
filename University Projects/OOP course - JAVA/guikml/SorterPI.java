@@ -1,0 +1,38 @@
+package guikml;
+
+public class SorterPI implements Comparable<SorterPI> {
+	
+	private double PI;
+	private int LINE;
+
+  public SorterPI(int line, double pi){
+    	
+    	//Integers.
+    	this.LINE = line;
+    	//Doubles.
+    	this.PI = pi;
+    	
+    }
+        public int compareTo(SorterPI o) {
+        	
+        	 if(this.PI<o.PI)
+                 return -1;
+           else if(o.PI<this.PI)
+                 return 1;
+           return 0;
+            
+        }
+		public double getPI() {
+			return PI;
+		}
+		public void setPI(double pI) {
+			PI = pI;
+		}
+		public int getLINE() {
+			return LINE;
+		}
+		public void setLINE(int lINE) {
+			LINE = lINE;
+		}
+	
+}

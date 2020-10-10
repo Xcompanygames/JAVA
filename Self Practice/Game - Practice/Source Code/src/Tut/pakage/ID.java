@@ -3,6 +3,6 @@ package Tut.pakage;
 public enum ID {
 
 	Player(),
-	BasicEnemy();
+	BasicEnemy(), Trail(), FastEnemy(), SmartEnemy();
 	
 }

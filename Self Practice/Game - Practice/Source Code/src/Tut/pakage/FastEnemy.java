@@ -4,16 +4,16 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class BasicEnemy extends GameObject {
+public class FastEnemy extends GameObject {
 
 	
 	private handler Handler;
 	
-	public BasicEnemy(int x, int y, ID id,handler Handler) {
+	public FastEnemy(int x, int y, ID id,handler Handler) {
 		super(x,y,id); //We will use the constractor from GameObject class
 		this.Handler=Handler;
-		velX=5;
-		velY=5;
+		velX=2;
+		velY=9;
 		
 	}
 	public Rectangle getBounds() {
@@ -31,15 +31,15 @@ public class BasicEnemy extends GameObject {
 			velX*=-1;
 		}
 		
-		Handler.addObject(new Trail((int)x,(int)y,ID.Trail, Color.red,0.02f,16,16, Handler));
+		Handler.addObject(new Trail((int)x,(int)y,ID.Trail, Color.CYAN,0.02f,16,16, Handler));
 		
 	}
 
 	@Override
 	public void render(Graphics g) {
 		// TODO Auto-generated method stub
-		g.setColor(Color.red);
-		g.fillRect((int)x,(int) y, 16, 16);
+		g.setColor(Color.CYAN);
+		g.fillRect((int)x, (int)y, 16, 16);
 	}
 	
 	

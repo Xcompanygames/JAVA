@@ -24,7 +24,7 @@ public class game extends Canvas implements Runnable {
 	private Random r; //Just a random value for us to use
 	private handler Handler; //The handler will handle all of our Game objects
 	private HUD hud; ///The player HUD
-	
+	private Spawn spawner;
 	
 	public game() {
 		
@@ -40,11 +40,11 @@ public class game extends Canvas implements Runnable {
 		//
 		//Adding the player and enemies
 		//
-		Handler.addObject(new Player(WIDTH/2-32,HEIGHT/2-32,ID.Player));
-		Handler.addObject(new BasicEnemy(r.nextInt(WIDTH),r.nextInt(HEIGHT),ID.BasicEnemy));
+		spawner = new Spawn(Handler,hud); //Initiating a new HUD
 
-	
 		
+		Handler.addObject(new Player(WIDTH/2-32,HEIGHT/2-32,ID.Player,Handler));
+		Handler.addObject(new BasicEnemy(r.nextInt(game.WIDTH),r.nextInt(game.HEIGHT),ID.BasicEnemy,Handler));
 
 	}
 	
@@ -134,6 +134,7 @@ public class game extends Canvas implements Runnable {
 	private void tick() {
 		Handler.tick();
 		hud.tick();
+		spawner.tick();
 	}
 
 	////Setting a max and a min value to a range

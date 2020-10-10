@@ -1,16 +1,17 @@
 package Tut.pakage;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public abstract class GameObject {
 
 	/////A game object will be every single object that we will use in this game
 	
-	protected int x,y;
+	protected float x,y;
 	protected ID id;
-	protected int velX, velY;
+	protected float velX, velY;
 	
-	public GameObject (int x, int y, ID id) {
+	public GameObject (float x, float y, ID id) {
 		//This constractor will be used every time we create a new object
 		this.x =x;
 		this.y=y;
@@ -19,7 +20,7 @@ public abstract class GameObject {
 	
 	public abstract void tick();
 	public abstract void render(Graphics g);
-
+	public abstract Rectangle getBounds();
 	
 	public void setX(int x) {
 		this.x=x;
@@ -31,12 +32,12 @@ public abstract class GameObject {
 	}	
 	
 	
-	public int getX(int x) {
+	public float getX() {
 	return x;
 	}	
 	
 	
-	public int getY(int y) {
+	public float getY() {
 	return y;
 	}	
 	
@@ -54,10 +55,10 @@ public abstract class GameObject {
 	public void setVelY(int velY) {
 		this.velY=velY;
 	}
-	public int getVelX() {
+	public float getVelX() {
 		return velX;
 	}
-	public int getVelY() {
+	public float getVelY() {
 		return velY;
 	}
 	

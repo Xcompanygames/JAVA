@@ -6,7 +6,11 @@ import java.awt.event.KeyEvent;
 public class keyInput extends KeyAdapter{
 
 	private handler Handler;
-	
+	private boolean uP = false; //UP
+	private boolean dP = false; //DOWN
+	private boolean lP = false; //LEFT
+	private boolean rP = false; //RIGHT
+
 	public keyInput(handler Handler) {
 		this.Handler = Handler;
 	}
@@ -18,10 +22,24 @@ public class keyInput extends KeyAdapter{
 		
 		GameObject tempObject = Handler.object.get(i);
 		if(tempObject.getid() == ID.Player) {
-		if(key == KeyEvent.VK_W) tempObject.setVelY(-5);
-		if(key == KeyEvent.VK_S) tempObject.setVelY(5);
-		if(key == KeyEvent.VK_D) tempObject.setVelX(5);
-		if(key == KeyEvent.VK_A) tempObject.setVelX(-5);
+			
+
+          if(key == KeyEvent.VK_W ){
+            uP = true;
+            tempObject.setVelY(-5);
+            }
+          if(key == KeyEvent.VK_S){
+            dP = true;
+            tempObject.setVelY(5);
+            }
+          if(key == KeyEvent.VK_D){
+            rP = true;
+            tempObject.setVelX(5);
+            }
+          if(key == KeyEvent.VK_A){
+            lP = true;
+            tempObject.setVelX(-5);
+            }
 
 	}	
 		}
@@ -33,12 +51,46 @@ public class keyInput extends KeyAdapter{
 			
 		GameObject tempObject = Handler.object.get(i);
 
+    
 		if(tempObject.getid() == ID.Player) {
-		
-		if(key == KeyEvent.VK_W) tempObject.setVelY(0);
-		if(key == KeyEvent.VK_S) tempObject.setVelY(0);
-		if(key == KeyEvent.VK_D) tempObject.setVelX(0);
-		if(key == KeyEvent.VK_A) tempObject.setVelX(0);
+            if(key == KeyEvent.VK_W){
+                uP = false;
+                if(dP){
+                	tempObject.setVelY(5);
+                }
+                else{
+                	tempObject.setVelY(0);
+                }}
+            
+    		if(tempObject.getid() == ID.Player) {
+                if(key == KeyEvent.VK_S){
+                    dP = false;
+                    if(uP){
+                    	tempObject.setVelY(-5);
+                    }
+                    else{
+                    	tempObject.setVelY(0);
+                    }}}
+                
+        		if(tempObject.getid() == ID.Player) {
+                    if(key == KeyEvent.VK_D){
+                        rP = false;
+                        if(lP){
+                        	tempObject.setVelX(-5);
+                        }
+                        else{
+                        	tempObject.setVelX(0);
+                        }}}                
+                
+        		if(tempObject.getid() == ID.Player) {
+                    if(key == KeyEvent.VK_A){
+                        lP = false;
+                        if(rP){
+                        	tempObject.setVelX(5);
+                        }
+                        else{
+                        	tempObject.setVelX(0);
+                        }}}                  
 
 	}	
 		}

@@ -19,8 +19,7 @@ public class SmartEnemy extends GameObject {
 				player =Handler.object.get(i);
 			}
 		}
-		
-		
+				
 		
 		
 		//velX=5;
